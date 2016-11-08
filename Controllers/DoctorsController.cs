@@ -15,10 +15,16 @@ namespace Hospital.Controllers
         private HospitalContext db = new HospitalContext();
 
         // GET: Doctors
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            var doctors = db.Doctors.Include(c => c.Patients);
+            var doctors = from d in db.Doctors.Include(p => p.Patients)
+                           select d;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                doctors = doctors.Where(d => d.Name.Contains(searchString));
+            }
             return View(doctors.ToList());
+
         }
 
         // GET: Doctors/Details/5

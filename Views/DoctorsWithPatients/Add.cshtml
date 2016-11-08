@@ -1,0 +1,31 @@
+﻿@model Hospital.Models.DoctorsWithPatients
+
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+
+<div>
+    <h4>DoctorsWithPatients</h4>
+    @using (Html.BeginForm())
+    {
+
+        <div>
+            Doctor's name
+            <div>
+                @Html.EditorFor(model => model.DoctorName)
+            </div>
+        </div>
+        <div>
+            Patients's name
+            <div>
+                @Html.EditorFor(model => model.PatientName)            
+            </div>
+        </div>
+
+        <div style="margin-top:15px">
+            <input type="submit" value="Add" class="btn btn-default" style="width: 50px" />
+        </div>
+    }
+</div>

@@ -137,11 +137,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DoctorsController.cs" />
+    <Compile Include="Controllers\DoctorsWithPatientsController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\DoctorsWithPatients.cs" />
     <Compile Include="Models\HospitalContext.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -189,6 +191,8 @@
     <Content Include="Views\Doctors\Details.cshtml" />
     <Content Include="Views\Doctors\Edit.cshtml" />
     <Content Include="Views\Doctors\Index.cshtml" />
+    <Content Include="Views\DoctorsWithPatients\Index.cshtml" />
+    <Content Include="Views\DoctorsWithPatients\Add.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

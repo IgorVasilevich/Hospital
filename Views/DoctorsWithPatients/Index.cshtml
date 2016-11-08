@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Hospital.Models.Doctor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.ActionLink("add new record", "Add")
+<table class="table">
+    <tr>
+        <th>
+            PatientsName
+        </th>
+        <th>
+            DoctorName
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var doctor in Model)
+    {
+        foreach (var patient in doctor.Patients)
+        {
+            <tr>
+                <td>
+                    @patient.Name
+                </td>
+                <td>
+                    @doctor.Name
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = patient.Id })
+                </td>
+            </tr>
+        }
+    }
+</table>
